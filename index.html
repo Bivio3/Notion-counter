@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zähler</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .counter-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .counter {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .buttons button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1.5em;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .buttons button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <div class="counter" id="counter">0</div>
+        <div class="buttons">
+            <button onclick="increment()">▲</button>
+            <button onclick="reset()">↻</button>
+            <button onclick="decrement()">▼</button>
+        </div>
+    </div>
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = count;
+        }
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            count--;
+            updateCounter();
+        }
+
+        function reset() {
+            count = 0;
+            updateCounter();
+        }
+    </script>
+</body>
+</html>
+
